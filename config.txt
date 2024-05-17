@@ -1,0 +1,4 @@
+user_name: Colin
+voice: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_FR-FR_HORTENSE_11.0
+microphone: 1
+mode: v

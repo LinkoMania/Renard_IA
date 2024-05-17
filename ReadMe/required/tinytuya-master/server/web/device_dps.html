@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>TinyTuya API Server - Device Details</title>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <link rel="stylesheet" href="tinytuya.css">
+</head>
+
+<body>
+    <div class="title"></div>
+    <p>Device Details</p>
+    <div class="device"></div>
+    <p>Device DPS</p>
+    <div class="dps"></div>
+
+    <script>
+
+    $(document).on('click', '.edit', function() {
+      $(this).parent().siblings('td.data').each(function() {
+        var content = $(this).html();
+        $(this).html('<input value="' + content + '" />');
+      });
+
+      $(this).siblings('.save').show();
+      $(this).hide();
+    });
+
+    $(document).on('click', '.save', function() {
+      var key = $(this).parent().siblings('td.key').html();
+      var val = "";
+
+      $('input').each(function() {
+        var content = $(this).val();
+        $(this).html(content);
+        $(this).contents().unwrap();
+
+        val = $(this).val()
+      });
+
+      $(this).siblings('.edit').show();
+      $(this).hide();
+
+      updateDPS(key,val);
+    });
+
+    function buildHtmlTable(json,jsonscheme) {
+      var table = "<table class=\"table data\">";
+
+      table = table + "<th>Index</th><th>Code</th><th>Value</th>";
+
+      for (var key in json) {
+        table = table + "<tr>";
+
+        var cellValue = key;
+        table = table + "<td class=\"key\">" + cellValue + "</td>";
+
+        var CellValue;
+        for (var i in jsonscheme) {
+          if (i === key) {
+            CellValue = jsonscheme[i]['code'];
+            break;
+          }
+        }
+        table = table + "<td class=\"code\">" + CellValue + "</td>";
+
+        var cellValue = json[key];
+        table = table + "<td class=\"data\">" + cellValue + "</td>";
+        table = table + "<td><button class=\"edit\">Edit</button><button class=\"save\" hidden>Save</button></td>";
+        table = table + "<tr>";
+      }
+
+      table = table + "</table>";
+      return table;
+    }
+
+    // Get Version
+    function showversion() {
+        var pwurl = window.location.protocol + "//" + window.location.host + "/stats";
+        $.getJSON(pwurl, function(data) {
+            var text = `TinyTuya API Server ${data.tinytuya}`
+            $(".title").html(text);
+        });
+        setTimeout(showversion, 10000);
+    }
+
+    // Device DPS Details
+    function device_dps() {
+        // Grab the GET variables
+        var $_GET = {};
+        if(document.location.toString().indexOf('?') !== -1) {
+            var query = document.location
+                        .toString()
+                        // get the query string
+                        .replace(/^.*?\?/, '')
+                        // and remove any existing hash string (thanks, @vrijdenker)
+                        .replace(/#.*$/, '')
+                        .split('&');
+
+            for(var i=0, l=query.length; i<l; i++) {
+            var aux = decodeURIComponent(query[i]).split('=');
+            $_GET[aux[0]] = aux[1];
+            }
+        }
+        id = $_GET['id'];
+
+        // Device Metadata
+        var pwurl = window.location.protocol + "//" + window.location.host + "/device/" + id;
+        $.getJSON(pwurl, function(data) {
+            var ip = data.ip;
+            var name = data.name;
+            var version = data.version;
+            var key = data.key;
+            var product = data.productKey;
+            var mac = data.mac;
+            var output = "<table>" +
+                "<tr><td>Name</td><td><div class='value'>" + name + "</div></td><tr>" +
+                "<tr><td>Device ID</td><td><div class='value'>" + id + "</div></td><tr>" +
+                "<tr><td>IP</td><td><div class='value'>" + ip + "</div></td><tr>" +
+                "<tr><td>MAC</td><td><div class='value'>" + mac + "</div></td><tr>" +
+                "<tr><td>Version</td><td><div class='value'>" + version + "</div></td><tr>" +
+                "<tr><td>Key</td><td><div class='value'>" + key + "</div></td><tr>" +
+                "<tr><td>Product</td><td><div class='value'>" + product + "</div></td><tr>";
+            $(".device").html(output);
+        });
+
+        // Device DPS
+        var pwurl = window.location.protocol + "//" + window.location.host + "/status/" + id;
+        $.getJSON(pwurl, function(data,textStatus,jqXHR) {
+            var dps_json = jqXHR.responseJSON["dps"];
+            var dps_scheme_json = jqXHR.responseJSON["dps_mapping"];
+            $(".dps").html(buildHtmlTable(dps_json,dps_scheme_json));
+        });
+    }
+
+    // Get Version
+    function updateDPS(key, val) {
+        var pwurl = window.location.protocol + "//" + window.location.host + "/set/" + id + "/" + key + "/" + val;
+        $.getJSON(pwurl, function(data) {
+            window.location.reload();
+        });
+    }
+
+    // Display
+    showversion();
+    device_dps();
+
+    </script>
+
+<div class="controls">
+    <p><a href="/">Back</a></p>
+</div>
+
+</body>
+</html>

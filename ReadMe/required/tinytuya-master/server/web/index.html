@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>TinyTuya API Server</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" href="tinytuya.css">
+</head>
+
+<body>  
+    <div class="title"></div>
+    <div class="row">
+        <div class="lcolumn">
+            <p class="onlinetext">Devices Online</p>
+            <div class="devices"></div>
+        </div>
+        <div class = "rcolumn">
+            <p class="offlinetext">Devices Offline</p>
+            <div class="offline"></div>
+        </div>
+    </div>
+    <div class="number"></div>
+    <script>
+
+    // Get Version
+    function showversion() {
+        var pwurl = window.location.protocol + "//" + window.location.host + "/stats";
+        $.getJSON(pwurl, function(data) {
+            var text = `TinyTuya API Server ${data.tinytuya}`;
+            $(".title").html(text);
+        });
+        setTimeout(showversion, 10000);
+    }
+
+    // Number of Devices
+    function numdevices() {
+        var pwurl = window.location.protocol + "//" + window.location.host + "/numdevices";
+        $.getJSON(pwurl, function(data) {
+            var text = `Number of Devices Found: ${data.found}` + 
+            ` - Registered: ${data.registered}`;
+            var online = `Devices Online: ${data.found}`;
+            var numoff = data.registered - data.found;
+            if(numoff<0) numoff = 0;
+            var offline = `Devices Offline: ${numoff}`;
+            $(".onlinetext").html(online)
+            $(".offlinetext").html(offline)
+            $(".number").html(text);
+        });
+        setTimeout(numdevices, 1000);
+    }
+
+    // Device List
+    function devicelist() {
+        var pwurl = window.location.protocol + "//" + window.location.host + "/devices";
+        $.getJSON(pwurl, function(data) {
+            // store entire array in deviceDB
+            let deviceDB = [];
+            // 
+            var output = "";
+            var id = "";
+            var ip = "";
+            var name = "";
+            var ver = "";
+            for (let x in data) {
+                //console.log(x + ": "+ data[x])
+                let device = {
+                    "name": data[x].name,
+                    "id": x,
+                    "ip": data[x].ip,
+                    "version": data[x].version
+                }
+                deviceDB.push(device)
+            }
+            
+            // print sorted list
+            let sortedDevices = deviceDB.sort((c1, c2) => (c1.name > c2.name) ? 1 : (c1.name < c2.name) ? -1 : 0);
+            let rownum = 1;
+            output = "<table><thead>\n<tr>\n<th>#</th><th>Device Name</th><th>Device ID</th>" +
+                "<th>IP Address</th><th>Version</th><th>Control</th>\n</tr></thead>\n<tbody>";
+            for (let x in sortedDevices) {
+                output = output + "<tr>\n<td>" + rownum + "</td>" + 
+                    " <td> <a href='device_dps.html?id=" + sortedDevices[x].id + "'>" +
+                    (sortedDevices[x].name.length > 0 ? sortedDevices[x].name : '[' + sortedDevices[x].id + ']') +
+                    "</a> </td><td>" + 
+                    "<div class='id'>" + sortedDevices[x].id + "</div></td><td>" +
+                    "<div class='address'>" + sortedDevices[x].ip + "</div></td><td>" +
+                    "<div class='version'>" + sortedDevices[x].version + "</div></td>" +  
+                    " <td> <a href='device_dps.html?id=" + sortedDevices[x].id + "'>View</a></td>"
+                    "\n</tr>\n";
+                rownum++;
+            }
+            output = output + "</tbody>\n</table>\n";
+
+            $(".devices").html(output);
+            
+            // TODO - convert to table
+            // var tbl = `Number of Devices Found: ${data.numdevices}`
+            // $("#devicetable").html("<tr><td>name</td></tr>");
+        });
+        setTimeout(devicelist, 1000);
+    }
+
+    // Device Offline List
+    function offlinelist() {
+        var pwurl = window.location.protocol + "//" + window.location.host + "/offline";
+        $.getJSON(pwurl, function(data) {
+            // store entire array in deviceDB
+            let deviceDB = [];
+            // 
+            var output = "";
+            var id = "";
+            var name = "";
+            for (let x in data) {
+                let device = {
+                    "name": data[x].name,
+                    "id": x,
+                }
+                deviceDB.push(device)
+            }
+            
+            // print sorted list
+            let sortedDevices = deviceDB.sort((c1, c2) => (c1.name > c2.name) ? 1 : (c1.name < c2.name) ? -1 : 0);
+            let rownum = 1;
+            output = "<table><thead>\n<tr>\n<th>#</th><th>Device Name</th><th>Device ID</th>" +
+                "</tr></thead>\n<tbody>";
+            for (let x in sortedDevices) {
+                output = output + "<tr>\n<td>" + rownum + "</td>" + 
+                    " <td> <a href='device_dps.html?id=" + sortedDevices[x].id + "'>" +
+                    (sortedDevices[x].name.length > 0 ? sortedDevices[x].name : '[' + sortedDevices[x].id + ']') +
+                    "</a> </td><td>" + 
+                    "<div class='id'>" + sortedDevices[x].id + "</div></td>" +
+                    "\n</tr>\n";
+                rownum++;
+            }
+            output = output + "</tbody>\n</table>\n";
+            
+            $(".offline").html(output);
+        });
+        setTimeout(offlinelist, 1000);
+    }
+
+    // Display
+    showversion();
+    numdevices();
+    devicelist();
+    offlinelist();
+    
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,115 @@
+		Installation des dépandances necessaire a l'utilisation sous windows 11 : 
+pip install pyaudio pygame pyautogui google 
+
+SpeechRecognition==3.8.1
+pyttsx3==2.90
+translate==3.5.0
+nltk==3.6.3
+requests==2.26.0
+selenium==4.1.0
+
+dossier voix windows 
+%windir%\SysWOW64\speech\SpeechUX\sapi.cpl
+
+						Présentation du projet Renard :
+
+Je vous présente Renard un assistant virtuel personnel capable d'intéragire avec vous dans de simple dialogue,
+ainsi que d'effectuer des taches t'elle que Lancer le navigateur, effectuer des recherches sur internet ou encore 
+de lancer de la musique , etc...
+
+De ou l'idée est 'elle venue ? 
+Avant la création de renard , plus jeune j'utiliserais Sarah V3, un logiciel dans le même genre, mais qui maintenant est 
+depasser et vulnérable a divers cyber attaques, j'ai donc arreter de créer des plugins pour mon usage personnel.
+Lien -> https://blog.encausse.net/2013/05/23/sarah-joshua-jarvis-yuri-et-les-autres/comment-page-1/
+Par la suite j'effectue un travail sur l'apprentissage de python pour apprendre a certain audidacte la création de logiciel.
+L'idée est nées grâce aux projet "Loqui" URL -> https://github.com/nixiz0/Loqui créer par @nixiz0 (j'ai vus ta vidéo sur jarvis, bravo à toi.)
+Je ne travaille pas avec cette personne et n'utilise aucun des code qu'il a créer mais étant grand fan d'intéligence artificiel,
+je le remercie pour l'idée d'inclure la vision ainsi que le model ollama dans un nouveau plugins pour enfin rendre cette assistant
+virtuel capable d'un raisonement presque humain !
+
+
+
+Renard n'est en faites que l'exercices que j'effectue avec certaine personne
+qui souhaites apprendre python facilement, si vous n'avez aucune connaissance dans ce language, je vous invite a apprendre grace
+a renard et sa méthode de création de plugin tous els choix s'offre a vous et vous le constaterez par vous même !
+
+La grande pratique que j'ai créer sur cette version public c'est qu'il éxiste une multitudes de plugin a créer facilement
+car l'ensemble du projet est coder  en python,
+
+Le projet final de renard , consiste a le rendre totalement autonome, capable d'ecrire plusieurs méthodes de plugin a la demande de l'utilisateur
+et effectuer des tests, avoir accès total a une machine et c'est périférique et rendre l'utilisation possible pour de la domotic.
+
+		Configuration requise minimum pour l'utilisation de Renard et le plugin Ollama (IA)
+
+
+Procesor : IntelCore i5 4th 3.5 Ghz
+Memoir : 16Go RAM DDR3
+Espace disk : +- 20go
+
+		Configuration requise minimum pour l'utilisation de Renard sans plugin Olama.
+
+Procesor :  2.0Ghz
+Memoir : 1Go RAM DDR3
+Espace disk : +- 1go
+
+
+						Version disponible : Renard V-0.1
+Changelog :
+- Création du fichier config.
+- Création du système de phrase clef par texte pour effectuer une action.
+- Création du mode vocal pour effctuer une ation.
+- Creation du système de chargement de plugin.
+- Création des 29 plugins de gestion.
+
+Liste des 31 plugins et utilisation : 
+
+Plugin_ollama
+Plugin_ollama_vision
+action_ecran
+application_launch
+blague
+browser_control
+bruitage
+calculatrice
+capital
+check_internet_connection
+chifoumi
+citation
+desktop_looking
+dialogue
+heure
+insultes
+meteo_alternative
+minuteur
+music_multimedia
+my_first_plugin
+ouvrir_dossier
+politesse
+prendnote
+recherche_google
+system_control
+Titre_mail
+traduction_eng_fr
+voyance
+wikipedia
+youtube_control
+
+						Version disponible : Renard V-0.2
+Changelog :
+- nouvelle gestion des erreurs.
+- Sauvegarde des intéractions et résultat.
+- Ajout d'un message vocal et textuel après le chargement de l'assistant.
+- Mode server, utilisation via requette http pour une utilisation exterieur.
+- Mode discord l'assistant c'est ce connecté a discord et dialoguer avec les utilisateurs. (Utilisation multi room vocal et textuel)
+- Création d'un plus beau design.
+- Installation automatique des dépandances necessaire.
+- Création du plugin Ollama et discution avec le language naturel Renard (phi3:mini custom)
+- Création du plugin Ollama_Vision (prend un screen et annalyse celui-ci)
+- Stop de l'écoute du bot et modification du comportement vocal qui ne doit ce déclencher que si le mot "renard"
+
+Version disponible : Renard V-0.3
+Changelog :
+- Création du plugin Pentesting.
+- Création du plugin domotic_exemple (Utilisation d'un lampe)  
+- reconnsaissance facial dans la pièce. (juste pour le fun)
+- Modification du model fox:latest pour l'éducation sur le code et le pentesting.
