@@ -1,145 +1,146 @@
--Ollama Model
-vocal : renard passe en mode dialogue
-vocal : renard passe en mode assistant
+# Ollama Model
 
-- action_ecran
-	vocal : Renard éteins l'écran
-	vocal : Renard allume l'écran
+## Commandes Vocales
 
-- application_launch
-	vocal : renard démarre le logiciel -> brave
-				  	   -> outlook
-				 	   -> rdp
-				 	   -> tor
-				 	   -> paint
-				 	   -> screenshot
-				  	   -> visual code
+### Mode Dialogue
+- **Commande** : `renard passe en mode dialogue`
+- **Commande** : `renard passe en mode assistant`
 
+### Action Écran
+- **Commande** : `Renard éteins l'écran`
+- **Commande** : `Renard allume l'écran`
 
-- blague
-vocal : renard donne-moi une blague
+### Lancement d'Applications
+- **Commande** : `renard démarre le logiciel`
+  - `-> brave`
+  - `-> outlook`
+  - `-> rdp`
+  - `-> tor`
+  - `-> paint`
+  - `-> screenshot`
+  - `-> visual code`
 
-- browser_control
-vocal : renard page suivante
-vocal : renard page précédente
-vocal : renard rafraîchis la page
-vocal : renard tape URL
-vocal : renard ferme le navigateur Chrome
-vocal : renard diminue la fenêtre du navigateur
-vocal : renard ajoute la page au favoris
-vocal : renard descend la page
-vocal : renard monte la page
+### Blagues
+- **Commande** : `renard donne-moi une blague`
 
-- bruitage
-vocal : renard fais le bruit du -> *Liste des sons disponible dans le dossier bruitage
+### Contrôle du Navigateur
+- **Commande** : `renard page suivante`
+- **Commande** : `renard page précédente`
+- **Commande** : `renard rafraîchis la page`
+- **Commande** : `renard tape URL`
+- **Commande** : `renard ferme le navigateur Chrome`
+- **Commande** : `renard diminue la fenêtre du navigateur`
+- **Commande** : `renard ajoute la page aux favoris`
+- **Commande** : `renard descend la page`
+- **Commande** : `renard monte la page`
 
-- calculatrice 
-vocal : renard calcule -> * Votre calcule 
+### Bruitages
+- **Commande** : `renard fais le bruit du` -> *Liste des sons disponible dans le dossier bruitage*
 
-- capitale
-vocal : renard capitale de ...
+### Calculatrice
+- **Commande** : `renard calcule` -> *Votre calcul*
 
-- internet_check
-vocal : renard il y a internet
+### Capitale
+- **Commande** : `renard capitale de ...`
 
-- chifoumi
-vocal : lance le jeu chifoumi
-Plugin a finir
+### Vérification Internet
+- **Commande** : `renard il y a internet`
 
-- citation
-vocal : renard dis-moi une citation
+### Chifoumi
+- **Commande** : `lance le jeu chifoumi` (Plugin à finir)
 
-- desktop_looking
-vocal : Renard affiche le bureau
-vocal : Renard remets les fenêtres
+### Citations
+- **Commande** : `renard dis-moi une citation`
 
-- dialogue
-vocal : renard comment vas-tu
-        renard quel est ton nom
-        renard quel temps fait-il
-        renard qu'est-ce que tu fais
-        renard quelle est ta couleur préférée
-        renard parle-moi de toi
-        renard raconte une blague
-        renard quels sont tes hobbies
-        renard quelle est ta musique préférée
-        renard tu es là
+### Affichage du Bureau
+- **Commande** : `Renard affiche le bureau`
+- **Commande** : `Renard remets les fenêtres`
 
-- domotic_lamp
-vocal : renard éteins la lampe
-vocal : renard allume la lampe
+### Dialogue
+- **Commandes** :
+  - `renard comment vas-tu`
+  - `renard quel est ton nom`
+  - `renard quel temps fait-il`
+  - `renard qu'est-ce que tu fais`
+  - `renard quelle est ta couleur préférée`
+  - `renard parle-moi de toi`
+  - `renard raconte une blague`
+  - `renard quels sont tes hobbies`
+  - `renard quelle est ta musique préférée`
+  - `renard tu es là`
 
-- heure 
-vocal : renard donne moi l'heure
-vocal : renard quelle est la date
+### Domotique (Lampe)
+- **Commande** : `renard éteins la lampe`
+- **Commande** : `renard allume la lampe`
 
-- insulte
-*surprise lol 
+### Heure et Date
+- **Commande** : `renard donne moi l'heure`
+- **Commande** : `renard quelle est la date`
 
+### Insultes
+- **Commande** : *surprise lol*
 
-- interface_rainmeter
-vocal : renard démarre ton interface
-vocal : ferme ton interface
+### Interface Rainmeter
+- **Commande** : `renard démarre ton interface`
+- **Commande** : `ferme ton interface`
 
-- meteo_alternative
-vocal :  renard quel temps fait-il en Belgique
+### Météo Alternative
+- **Commande** : `renard quel temps fait-il en Belgique`
 
-- minuteur
-vocal : renard mets le chrono à *secondes, minutes, heure, jour.
+### Minuteur
+- **Commande** : `renard mets le chrono à` *secondes, minutes, heure, jour*
 
-- mode_plugin
-Configuration du mode texte ou vocal 
+### Mode Plugin
+- **Configuration** : Mode texte ou vocal
 
-- music_multimedia
-vocal : renard musique (choix de la playliste) 
-vocal : renard musique -> pause
-		       -> play
-		       -> change de musique
-		       -> musique précédente
-		       -> augmente le volume
-		       -> diminue le volume
+### Musique et Multimédia
+- **Commande** : `renard musique (choix de la playlist)`
+- **Commande** : `renard musique` -> `pause`
+  - `-> play`
+  - `-> change de musique`
+  - `-> musique précédente`
+  - `-> augmente le volume`
+  - `-> diminue le volume`
 
-- my_first_plugin
-comme dialogue
+### Premier Plugin
+- **Commande** : comme dialogue
 
-- ouvrir_dossier 
-vocal : renard ouvre mes documents
-vocal : renard ouvre mes images
-vocal : renard ouvre mes musiques
+### Ouverture de Dossiers
+- **Commande** : `renard ouvre mes documents`
+- **Commande** : `renard ouvre mes images`
+- **Commande** : `renard ouvre mes musiques`
 
-- politesse
-vocal : merci
-ect ...
+### Politesse
+- **Commande** : `merci`
+- **etc...**
 
+### Prise de Notes
+- **Commande** : `renard prend notes`
+- **Commande** : `renard donne moi le nombre de notes`
+- **Commande** : `renard lis moi la note (numéro)`
+- **Commande** : `renard efface la note (numéro)`
 
- - prendnotes
-vocal : renard prend notes
-vocal : renard donne moi le nombre de note
-vocal : renard lis moi la note (numero)
-vocal : renard efface la note (numero)
+### Recherche Google
+- **Commande** : `renard cherche sur google` *(votre recherche)*
+- **Commande** : `renard ouvre la recherche google`
 
-- recherche_google
-vocal : renard cherche sur google *(votre recherche)
-vocal : renard ouvre la recherche google
+### Contrôle du Système
+- **Commande** : `renard ferme ton système`
+- **Commande** : `relance ton système`
 
-- system_control
-vocal : renard ferme ton système
-vocal : relance ton système
+### E-mails
+- **Commande** : `renard teste la connexion aux e-mails`
+- **Commande** : `renard lis mes 3 derniers emails`
 
-- Titre_mail
-vocal : renard test la connexion aux e-mails
-vocal : renard lis mes 3 derniers emails
+### Traduction Anglais-Français
+- **Commande** : `renard traduit en anglais` *votre texte*
+- **Commande** : `renard traduit en français` *votre texte*
 
-- traduction_eng_fr
-vocal : renard traduit en anglais *votre texte
-vocal : renard traduit en français * votre texte
+### Voyance
+- **Commande** : `Donne-moi l'horoscope`
 
-- voyance
-vocal : Donne-moi l'horoscope
+### Wikipedia
+- **Commande** : `renard recherche sur Wikipédia` *votre recherche*
 
-- wikipedia
-vocal : renard recherche sur Wikipédia *votre recherche
-
-
-- vocal : renard va sur youtube et cherche * votre recherche
-
+### YouTube
+- **Commande** : `renard va sur youtube et cherche` *votre recherche*
