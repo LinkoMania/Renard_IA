@@ -1,0 +1,145 @@
+-Ollama Model
+vocal : renard passe en mode dialogue
+vocal : renard passe en mode assistant
+
+- action_ecran
+	vocal : Renard éteins l'écran
+	vocal : Renard allume l'écran
+
+- application_launch
+	vocal : renard démarre le logiciel -> brave
+				  	   -> outlook
+				 	   -> rdp
+				 	   -> tor
+				 	   -> paint
+				 	   -> screenshot
+				  	   -> visual code
+
+
+- blague
+vocal : renard donne-moi une blague
+
+- browser_control
+vocal : renard page suivante
+vocal : renard page précédente
+vocal : renard rafraîchis la page
+vocal : renard tape URL
+vocal : renard ferme le navigateur Chrome
+vocal : renard diminue la fenêtre du navigateur
+vocal : renard ajoute la page au favoris
+vocal : renard descend la page
+vocal : renard monte la page
+
+- bruitage
+vocal : renard fais le bruit du -> *Liste des sons disponible dans le dossier bruitage
+
+- calculatrice 
+vocal : renard calcule -> * Votre calcule 
+
+- capitale
+vocal : renard capitale de ...
+
+- internet_check
+vocal : renard il y a internet
+
+- chifoumi
+vocal : lance le jeu chifoumi
+Plugin a finir
+
+- citation
+vocal : renard dis-moi une citation
+
+- desktop_looking
+vocal : Renard affiche le bureau
+vocal : Renard remets les fenêtres
+
+- dialogue
+vocal : renard comment vas-tu
+        renard quel est ton nom
+        renard quel temps fait-il
+        renard qu'est-ce que tu fais
+        renard quelle est ta couleur préférée
+        renard parle-moi de toi
+        renard raconte une blague
+        renard quels sont tes hobbies
+        renard quelle est ta musique préférée
+        renard tu es là
+
+- domotic_lamp
+vocal : renard éteins la lampe
+vocal : renard allume la lampe
+
+- heure 
+vocal : renard donne moi l'heure
+vocal : renard quelle est la date
+
+- insulte
+*surprise lol 
+
+
+- interface_rainmeter
+vocal : renard démarre ton interface
+vocal : ferme ton interface
+
+- meteo_alternative
+vocal :  renard quel temps fait-il en Belgique
+
+- minuteur
+vocal : renard mets le chrono à *secondes, minutes, heure, jour.
+
+- mode_plugin
+Configuration du mode texte ou vocal 
+
+- music_multimedia
+vocal : renard musique (choix de la playliste) 
+vocal : renard musique -> pause
+		       -> play
+		       -> change de musique
+		       -> musique précédente
+		       -> augmente le volume
+		       -> diminue le volume
+
+- my_first_plugin
+comme dialogue
+
+- ouvrir_dossier 
+vocal : renard ouvre mes documents
+vocal : renard ouvre mes images
+vocal : renard ouvre mes musiques
+
+- politesse
+vocal : merci
+ect ...
+
+
+ - prendnotes
+vocal : renard prend notes
+vocal : renard donne moi le nombre de note
+vocal : renard lis moi la note (numero)
+vocal : renard efface la note (numero)
+
+- recherche_google
+vocal : renard cherche sur google *(votre recherche)
+vocal : renard ouvre la recherche google
+
+- system_control
+vocal : renard ferme ton système
+vocal : relance ton système
+
+- Titre_mail
+vocal : renard test la connexion aux e-mails
+vocal : renard lis mes 3 derniers emails
+
+- traduction_eng_fr
+vocal : renard traduit en anglais *votre texte
+vocal : renard traduit en français * votre texte
+
+- voyance
+vocal : Donne-moi l'horoscope
+
+- wikipedia
+vocal : renard recherche sur Wikipédia *votre recherche
+
+
+- vocal : renard va sur youtube et cherche * votre recherche
+
