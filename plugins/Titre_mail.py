@@ -49,8 +49,8 @@ def test_email_connection(username, password, server):
 def respond(user_input):
     if "renard test la connexion aux e-mails" in user_input:
         # Paramètres pour Gmail
-        username = 'linkocreation@gmail.com'
-        password = 'stkmffnekfvutwox'
+        username = 'VOTRE EMAIL'
+        password = 'Votre SECURE CODE GMAIL'
         server = 'imap.gmail.com'
 
         # Test de la connexion
